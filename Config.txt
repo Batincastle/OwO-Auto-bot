@@ -1,0 +1,80 @@
+import pyautogui
+import time
+import random
+
+
+prayId = 970714446437703742
+def main(ask):
+     if (wannaHunt == "y"):
+         hunt(hunt)
+         wait_time = random.uniform(5, 10)
+         time.sleep(wait_time)
+
+     if (wannaPray == "y"):
+         pray(pray)
+         wait_time = random.uniform(5, 10)
+         time.sleep(wait_time)
+         
+     if (wannaBattle == "y"):
+         battle(battle)
+
+def ask():
+     wannaHunt = input("Did you want hunt? y/n :")
+     wannaBattle = input("Did you want battle? y/n :")
+     wannaPray = input("Did you want pray? y/n :")
+     wannaCookie = input("Did you want cookie? y/n :")
+     wannaTalk = input("Did you want talk? y/n :")
+
+def pray():
+    pyautogui.typewrite("owo pray <@" + prayId + ">")
+    print("Pray done with " + "x" + " Seconds!")
+    pyautogui.press("enter")
+
+def hunt():
+    pyautogui.typewrite("owo hunt")
+    print("Hunt done with " + "x" + " Seconds!")
+    pyautogui.press("enter")
+
+def battle():
+    pyautogui.typewrite("owo battle")
+    print("Battle done with " + "x" + " Seconds!")
+    pyautogui.press("enter")
+
+def talk(Phrases):
+    with open(Phrases, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+        if not lines:
+            return None
+        return random.choice(lines).strip()
+
+Phrases = 'Phrases.txt'  
+selected_line = random_line_from_file(Phrases)
+
+if selected_line:
+    print("Randomly selected line:", selected_line)
+else:
+    print("The file is empty.") 
+
+
+
+    ##########################################
+   # try:
+    #    while True:
+            #claim
+     #       hunt():
+#
+ #           wait_time = random.uniform(15, 20)
+  #          print(wait_time)
+   #         time.sleep(wait_time)
+#
+ #           # "wh" kelimesini yaz
+  #          pyautogui.typewrite("w h")
+#
+ #           # Enter tuşuna bas
+  #          pyautogui.press("enter")
+#
+ #   except KeyboardInterrupt:
+  #      print("\nBot sonlandırıldı.")
+
+#if __name__ == "__main__":
+ #   main()
